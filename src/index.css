@@ -1,0 +1,301 @@
+/* ==========================================================================
+   SylvaSphere Design System: Leaf Green & Sky Blue Academic Biosphere Theme
+   Targeted for Postgraduate (S2) Environmental Informatics & Sustainability
+   ========================================================================== */
+
+:root {
+  /* Color Palette: Leaf Green & Sky Blue */
+  --leaf-950: #052317;
+  --leaf-900: #0b3d2b;
+  --leaf-800: #12543c;
+  --leaf-700: #157353;
+  --leaf-600: #109b6e;
+  --leaf-500: #10b981;
+  --leaf-400: #34d399;
+  --leaf-300: #6ee7b7;
+  --leaf-200: #a7f3d0;
+  --leaf-100: #d1fae5;
+  --leaf-50:  #ecfdf5;
+
+  --sky-950: #082f49;
+  --sky-900: #0c4a6e;
+  --sky-800: #075985;
+  --sky-700: #0369a1;
+  --sky-600: #0284c7;
+  --sky-500: #0ea5e9;
+  --sky-400: #38bdf8;
+  --sky-300: #7dd3fc;
+  --sky-200: #bae6fd;
+  --sky-100: #e0f2fe;
+  --sky-50:  #f0f9ff;
+
+  --earth-900: #291e14;
+  --earth-800: #423223;
+  --earth-700: #6b5035;
+  --earth-100: #fef9f3;
+
+  --amber-500: #f59e0b;
+  --emerald-accent: #059669;
+
+  /* Neutrals & Surfaces */
+  --surface-bg: #f3f9f6;
+  --surface-card: #ffffff;
+  --surface-card-subtle: #f8fcfa;
+  --surface-glass: rgba(255, 255, 255, 0.82);
+  --surface-glass-green: rgba(236, 253, 245, 0.85);
+  --surface-glass-sky: rgba(240, 249, 255, 0.85);
+  --surface-dark: #081d15;
+
+  --border-light: rgba(16, 185, 129, 0.16);
+  --border-sky: rgba(14, 165, 233, 0.2);
+  --border-glass: rgba(255, 255, 255, 0.5);
+
+  --text-main: #0f2d22;
+  --text-heading: #062319;
+  --text-muted: #4b6b5f;
+  --text-light: #64748b;
+  --text-white: #ffffff;
+
+  /* Fonts */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(11, 61, 43, 0.05);
+  --shadow-md: 0 8px 24px -4px rgba(11, 61, 43, 0.08), 0 4px 12px -2px rgba(14, 165, 233, 0.06);
+  --shadow-lg: 0 16px 36px -6px rgba(11, 61, 43, 0.12), 0 8px 20px -4px rgba(14, 165, 233, 0.08);
+  --shadow-glow-leaf: 0 0 25px rgba(16, 185, 129, 0.28);
+  --shadow-glow-sky: 0 0 25px rgba(14, 165, 233, 0.28);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --tr-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background-color: var(--surface-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: 
+    radial-gradient(circle at 10% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 90% 25%, rgba(16, 185, 129, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(5, 150, 105, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #f0f9ff 0%, #f4fbf7 30%, #eaf6f0 100%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eef7f3;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--sky-400), var(--leaf-500));
+  border-radius: 999px;
+  border: 2px solid #eef7f3;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--sky-600), var(--leaf-700));
+}
+
+/* Typography elements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Glassmorphic Container Utility */
+.glass-panel {
+  background: var(--surface-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+}
+
+.glass-panel-sky {
+  background: var(--surface-glass-sky);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-sky);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+}
+
+.glass-panel-dark {
+  background: rgba(11, 38, 28, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  box-shadow: 0 20px 40px rgba(5, 35, 23, 0.35);
+  color: #f1fbf6;
+  border-radius: var(--radius-lg);
+}
+
+/* Badges */
+.badge-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: var(--leaf-100);
+  color: var(--leaf-800);
+  border: 1px solid var(--leaf-300);
+}
+
+.badge-sky {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: var(--sky-100);
+  color: var(--sky-800);
+  border: 1px solid var(--sky-300);
+}
+
+.badge-academic {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(14, 165, 233, 0.15));
+  color: var(--leaf-900);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Mathematical Formula Card */
+.formula-block {
+  font-family: var(--font-mono);
+  background: #09241b;
+  color: #7ef0be;
+  padding: 18px 22px;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--leaf-400);
+  margin: 16px 0;
+  overflow-x: auto;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.formula-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--sky-300);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+/* Pulse indicator */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--leaf-400);
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(52, 211, 153, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+  }
+}
+
+/* Floating leaf animation for canvas overlay */
+#leaf-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* App container */
+.app-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Responsive Grid Utilities */
+.academic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .academic-grid {
+    grid-template-columns: 1fr;
+  }
+}
